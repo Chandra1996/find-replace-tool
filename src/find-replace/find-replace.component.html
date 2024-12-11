@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="tool-group">
+    <p class="tool-title">Find and Replace Tool</p>
+
+    <!-- Text Input -->
+    <mat-form-field appearance="outline" class="text-area">
+      <textarea matInput [(ngModel)]="text" rows="6" placeholder="Enter or paste your text here"></textarea>
+    </mat-form-field>
+
+    <div class="text-area">
+      <mat-form-field appearance="outline" class="find-text-area mat-form-field-outline">
+        <mat-label>Text to Find</mat-label>
+        <input matInput [(ngModel)]="findText" placeholder="Type here" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="replace-text-area ">
+        <mat-label>Text to Replace</mat-label>
+
+        <input matInput [(ngModel)]="replaceText" placeholder="Type here" />
+      </mat-form-field>
+    </div>
+    <div class="options-group">
+      <mat-checkbox [(ngModel)]="caseSensitive">Case Sensitive</mat-checkbox>
+    </div>
+
+    <!-- Buttons -->
+    <div class="action-buttons">
+      <button mat-raised-button color="primary" class="action-btn" (click)="findAndReplace()">
+        Find and Replace
+      </button>
+      <button mat-stroked-button color="warn" class="action-btn" (click)="clearText()">
+        Clear
+      </button>
+    </div>
+  </div>
+  <div class="output-group">
+    <p class="output-title">Output</p>
+    <mat-form-field appearance="outline" class="text-area mat-form-field-outline">
+      <textarea matInput [value]="newText" rows="6" readonly placeholder="Updated text will appear here"></textarea>
+    </mat-form-field>
+  </div>
+</div>
